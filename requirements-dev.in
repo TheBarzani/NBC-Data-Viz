@@ -1,0 +1,14 @@
+-c requirements.txt
+bandit # check python sec
+black
+isort
+python-dotenv
+##jupyterlab>=3.0.*<3.6.0 - conflict
+jupyterlab==3.5.*
+jupyterlab-vim
+jupyterlab-lsp==3.9.*
+python-language-server
+jupyterlab-code-formatter
+nbconvert
+nbconvert[webpdf]
+line_profiler
