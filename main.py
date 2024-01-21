@@ -29,6 +29,6 @@ def simple_graph():
         animated_plot.set_ydata(Y[0:i])
         plt.draw()
     plt.show()
-pr
+
 if __name__ == "__main__":
     simple_graph()

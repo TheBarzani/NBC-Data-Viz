@@ -1,3 +1,18 @@
 import plotly.express as px
-fig = px.scatter(x=[1, 2, 3], y=[1, 3, 2])
-fig.write_html('outputs/first_figure.html', auto_open=True)
+from main import read_data
+
+# Simple plotly plot of the data
+def simple_plotly_plot(filename):
+    data = read_data(filename)
+    X = []
+    Y = []
+    for i in data:
+        if i["MessageType"] == "NewOrderRequest":
+            X.append(int(i["TimeStampEpoch"]))
+            Y.append(i["OrderPrice"])
+    fig = px.scatter(x=X, y=Y)
+    fig.write_html('outputs/first_figure.html', auto_open=True)
+
+
+if __name__ == "__main__":
+    simple_plotly_plot("Exchange_1.json")
